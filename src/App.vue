@@ -9,6 +9,10 @@
 </template>
 
 <style lang="scss">
+@import "~@/assets/style/test.scss";
+body{
+  background: $red
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
