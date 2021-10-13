@@ -1,8 +1,11 @@
 <template>
-  <div>Statistics.vue
+  <div class="nav-wrapper">
+    <div class="content">
+      <p>Statistics.vue</p>
+    </div>
     <Nav/>
   </div>
-</template>
+ </template>
 
 <script lang="ts">
 export default {
@@ -11,5 +14,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.nav-wrapper{
+  border:1px solid green;
+  display:flex;
+  flex-direction:column;
+  height:100vh;
+}
+.content{
+  border:1px solid blue;
+  flex-grow: 1;
+  overflow:auto;
+}
 </style>
