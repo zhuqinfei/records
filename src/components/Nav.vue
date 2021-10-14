@@ -1,36 +1,23 @@
 <template>
-  <div class="nav">
-    <router-link to="/money">
-      <svg>
-        <use xlink:href="#money"/>
-      </svg>
+  <nav>
+    <router-link to="/money" class="item">
+      <Icon name="money"/>
       记账
     </router-link>
-      |
-    <router-link to="/labels">
-      <svg>
-        <use xlink:href="#label"/>
-      </svg>
+    |
+    <router-link to="/labels" class="item">
+      <Icon name="label"/>
       标签
     </router-link>
-      |
-    <router-link to="/statistics">
-      <svg>
-        <use xlink:href="#statistics"/>
-      </svg>
+    |
+    <router-link to="/statistics" class="item">
+      <Icon name="statistics"/>
       统计
     </router-link>
-  </div>
+  </nav>
 </template>
 
 <script lang="ts">
-
-let importAll=(requireContext:__WebpackModuleApi.RequireContext)=>requireContext.keys().forEach(requireContext);
-try{
-  importAll(require.context('../assets/icons',true,/\.svg$/));
-}catch (error) {
-  console.log(error)
-}
 
 export default {
   name: 'Nav'
@@ -38,5 +25,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
- .nav{border:1px solid red;}
+
 </style>
