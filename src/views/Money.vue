@@ -1,7 +1,7 @@
 <template>
     <Layout class-prefix="layout">
       <NumberPad/>
-      <Types/>
+      <Types xxx="hi"/>
       <Notes/>
       <Tags/>
 
@@ -22,8 +22,5 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/assets/styles/helper.scss";
-
-
-
 
 </style>
