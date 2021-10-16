@@ -1,11 +1,10 @@
 <template>
-    <Layout class-prefix="layout">
-      <NumberPad/>
-      <Types xxx="hi"/>
-      <Notes/>
-      <Tags/>
-
-    </Layout>
+  <Layout class-prefix="layout">
+    <NumberPad/>
+    <Types :xxx="333"/>
+    <Notes/>
+    <Tags/>
+  </Layout>
 </template>
 
 <script lang="ts">
