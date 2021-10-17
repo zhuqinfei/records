@@ -9,7 +9,8 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import {Component, Prop} from 'vue-property-decorator';
+import {Component, Prop,Watch} from 'vue-property-decorator';
+
 @Component
 export default class Types extends Vue {
   type = '-';  //'-'表示支出，'+'表示收入
@@ -18,6 +19,11 @@ export default class Types extends Vue {
       throw new Error('type is unknown');
     }
     this.type = type;
+    this.$emit('update:value',type)
+  }
+  @Watch('type')  //添加watche是想type变化时候才触发事件，不变化就不触发
+    onTypeChanged(value:string){
+    this.$emit('update:value',value)
   }
 };
 </script>
