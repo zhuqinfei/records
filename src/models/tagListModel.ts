@@ -1,3 +1,5 @@
+import createId from '@/lib/idCreator';
+
 const localStorageKeyName = 'tagList';
 type Tag={
   id:string
@@ -22,7 +24,8 @@ const tagListModel:TagListModel = {
     //通过map()收集所有name,产生一个新的数组
     const names=this.data.map(item=>item.name);
     if(names.indexOf(name)>=0){return 'duplicated'}
-    this.data.push({id:name,name:name})
+    const id=createId().toString()
+    this.data.push({id,name:name})
     this.save();
     return 'success'
   },
