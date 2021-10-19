@@ -1,4 +1,4 @@
-import createId from '@/lib/idCreator';
+import createId from '@/lib/createId';
 
 const localStorageKeyName = 'tagList';
 type Tag={
