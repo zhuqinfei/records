@@ -21,11 +21,11 @@ import Tags from '@/components/Money/Tags.vue';
 import {Component,Watch} from 'vue-property-decorator';
 import recordListModel from '@/models/recordListModel';
 import tagListModel from '@/models/tagListModel';
+import {RecordItem} from '@/custom';
 
 
 const recordList=recordListModel.fetch()
 const  tagList=tagListModel.fetch()
-
 
 
 @Component(
@@ -33,22 +33,22 @@ const  tagList=tagListModel.fetch()
 )
 export default class Money extends Vue {
   tags = tagList;
-  recordList:RecordItem[]=recordList
+  recordList:RecordItem[]=recordList;
   record:RecordItem={
     tags:[],notes:'',type:'-',amount:0
   };
 
   onUpdateTags(value: string[]) {
-    this.record.tags=value
-  };
+    this.record.tags = value;
+  }
 
   onUpdateNotes(value: string) {
-    this.record.notes=value
-  };
+    this.record.notes = value;
+  }
 
   onUpdateAmount(value: string) {
-    this.record.amount=parseFloat(value);
-  };
+    this.record.amount = parseFloat(value);
+  }
   saveRecord(){
     const record2:RecordItem=recordListModel.clone(this.record)//深拷贝，经过两次转换变成两个不同地址,但是内容完成一样
     record2.createdAt=new Date()
