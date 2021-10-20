@@ -24,6 +24,7 @@ import tagListModel from '@/models/tagListModel';
 import {RecordItem} from '@/custom';
 
 
+
 const recordList=recordListModel.fetch()
 const  tagList=tagListModel.fetch()
 
@@ -32,9 +33,9 @@ const  tagList=tagListModel.fetch()
     { components: {Tags, FormItem, Types, NumberPad},}
 )
 export default class Money extends Vue {
-  tags = tagList;
-  recordList:RecordItem[]=recordList;
-  record:RecordItem={
+   tags = tagList;
+   recordList:RecordItem[]=recordList;
+   record:RecordItem={
     tags:[],notes:'',type:'-',amount:0
   };
 
@@ -50,13 +51,11 @@ export default class Money extends Vue {
     this.record.amount = parseFloat(value);
   }
   saveRecord(){
-    const record2:RecordItem=recordListModel.clone(this.record)//深拷贝，经过两次转换变成两个不同地址,但是内容完成一样
-    record2.createdAt=new Date()
-    this.recordList.push(record2)
+   recordListModel.create(this.record)
   }
   @Watch('recordList')
     onRecordListChanged(){
-    recordListModel.save(this.recordList)
+    recordListModel.save()
     }
 }
 </script>
