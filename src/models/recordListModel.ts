@@ -7,6 +7,7 @@ const recordListModel = {
     const record2:RecordItem=clone(record)//深拷贝，经过两次转换变成两个不同地址,但是内容完成一样
     record2.createdAt=new Date()
     this.data.push(record2)
+    this.save()
   },
   fetch() {
     this.data=JSON.parse(window.localStorage.getItem(localStorageKeyName) || '[]') as RecordItem[];
