@@ -19,11 +19,16 @@ type TagListModel={
 }
 
 interface Window {
-  tagList: Tag[],
-  createTag: (name: string) => void
-  removeTag: (id: string) => boolean
-  updateTag: (id: string, name: string) => 'success' | 'not found' | 'duplicated'
-  findTag: (id: string) => Tag
-  recordList: RecordItem[]
-  createRecord: (record: RecordItem) => void
+
+  // store不用写类型，因为它会自动推出来的
+
+  // store:{
+  //   tagList: Tag[],
+  //   createTag: (name: string) => void
+  //   removeTag: (id: string) => boolean
+  //   updateTag: (id: string, name: string) => 'success' | 'not found' | 'duplicated'
+  //   findTag: (id: string) => Tag
+  //   recordList: RecordItem[]
+  //   createRecord: (record: RecordItem) => void
+  // }
 }
