@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import {Component, Prop,Watch} from 'vue-property-decorator';
+import {Component, Prop} from 'vue-property-decorator';
 
 @Component
 export default class Types extends Vue {
@@ -20,7 +20,7 @@ export default class Types extends Vue {
     }
     this.$emit('update:value',type)
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

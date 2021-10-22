@@ -22,7 +22,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import {Component, Prop} from 'vue-property-decorator';
+import {Component} from 'vue-property-decorator';
 @Component
 export default class NumberPad extends Vue {
    output: string = '0';
@@ -57,7 +57,7 @@ export default class NumberPad extends Vue {
     this.$emit('submit',this.output)
     this.output='0'
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
