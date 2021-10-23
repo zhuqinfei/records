@@ -23,19 +23,19 @@ import FormItem from '@/components/Money/FormItem.vue';
 import Button from '@/components/Button.vue';
 
 @Component({
-  components: {Button, FormItem}
+  components: {Button, FormItem},
 })
 export default class EditLabel extends Vue {
-  tag?:{id:string,name:string}=undefined;
+   get tag(){
+     return this.$store.state.currentTag;
+   }
+
    created(){
-     //TODO
      const id=this.$route.params.id
-    //const tag=store.findTag(id)
-    //  if(tag){
-    //    this.tag=tag
-    //  }else{
-    //    this.$router.replace('/404')
-    //  }
+     this.$store.commit('setCurrentTag',id);
+     if(!this.tag){
+       this.$router.replace('/404')
+     }
    }
   updateTag(name:string){
      if(this.tag){
