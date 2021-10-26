@@ -57,7 +57,7 @@ const store= new Vuex.Store({
     },
     createRecord(state, record) {
       const record2: RecordItem = clone(record);//深拷贝，经过两次转换变成两个不同地址,但是内容完成一样
-      record2.createdAt = new Date();
+      record2.createdAt = new Date().toISOString();
       state.recordList.push(record2);
       store.commit('saveRecords')
     },
