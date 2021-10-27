@@ -6,11 +6,6 @@ import router from '@/router';
 
 Vue.use(Vuex);   //把store绑到Vue.prototype,好使用this.$store
 
-type RootState={
-  recordList:RecordItem[],
-  tagList:Tag[],
-  currentTag?:Tag
-}
 const store= new Vuex.Store({
   state: {
     recordList:[],
