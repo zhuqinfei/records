@@ -9,6 +9,7 @@ Vue.use(Vuex);   //把store绑到Vue.prototype,好使用this.$store
 const store= new Vuex.Store({
   state: {
     recordList:[],
+    createRecordError:null,  //判断保持能否成功
     tagList:[],
     currentTag:undefined
   } as RootState,
@@ -60,7 +61,13 @@ const store= new Vuex.Store({
         window.localStorage.setItem('recordList', JSON.stringify(state.recordList));
     },
     fetchTags(state) {
-       return state.tagList= JSON.parse(window.localStorage.getItem('tagList') || '[]');
+       state.tagList= JSON.parse(window.localStorage.getItem('tagList') || '[]');
+       if( !state.tagList || state.tagList.length===0){
+         store.commit('createTag','衣')
+         store.commit('createTag','食')
+         store.commit('createTag','住')
+         store.commit('createTag','行')
+       }
     },
     createTag(state,name: string) {
       const names = state.tagList.map(item => item.name);
