@@ -5,6 +5,7 @@ module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
     ? '/remoney-website/'
     : '/',
+  assetsDir:'public',
   lintOnSave: false,
   chainWebpack: config => {
     const dir = path.resolve(__dirname,'src/assets/icons')
